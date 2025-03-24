@@ -184,22 +184,6 @@ shinyServer(function(input, output, session) {
   
   
   
-  observe({
-    
-    value$countrym49 <- sub("\\|.*", "", input$countrym49)
-    
-    if(file.exists("E:/Tool_Host//FBS Tool - Pull Data/countrym49.txt")){
-      file.remove("E:/Tool_Host//FBS Tool - Pull Data/countrym49.txt")
-      write.table(value$countrym49,"E:/Tool_Host//FBS Tool - Pull Data/countrym49.txt",sep = "",row.names = F,col.names = F)
-    } else {
-      write.table(value$countrym49,"E:/Tool_Host//FBS Tool - Pull Data/countrym49.txt",sep = "",row.names = F,col.names = F)
-    }
-    
-
-
-    
-  })
-  
 #livestock reactive values   
   
   value <<- reactiveValues(data_livestock =NULL)
