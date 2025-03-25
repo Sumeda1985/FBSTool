@@ -136,8 +136,9 @@ cpc_vector <- within(missingCodes[, c("CPCCode", "Commodity")],
 classification <- data.table(read_excel("Data/production_list_cpc.xlsx"))
 classification <- classification[CPCCode == "39141", CPCCode := "39140.02"]
 
-## There 22 commodities in the classification table that are missing in 2.1 cpc expanded table provided by Tomasz.
-## The names are not exactly same as in 2.1 expanded. So merging names
+## There 22 commodities in the classification table that are missing
+## in 2.1 cpc expanded table provided by Tomasz.  The names are not
+## exactly same as in 2.1 expanded. So merging names
 
 ## classification[, Commodity := NULL]
 setnames(classification, "Commodity", "Commodity_name")
